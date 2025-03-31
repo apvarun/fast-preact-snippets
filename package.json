@@ -1,0 +1,44 @@
+{
+  "name": "fast-preact-snippets",
+  "displayName": "Fast Preact Snippets",
+  "description": "Fastest Preact snippets you will actually use",
+  "version": "1.0.0",
+  "publisher": "uicomet",
+  "icon": "images/fast-preact-snippets.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apvarun/fast-preact-snippets.git"
+  },
+  "keywords": [
+    "Preact",
+    "Preact JS",
+    "Preact Snippets",
+    "Preact Code Snippets"
+  ],
+  "engines": {
+    "vscode": "^1.63.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/snippets-ts.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets-ts.json"
+      }
+    ]
+  }
+}
