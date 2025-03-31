@@ -44,13 +44,13 @@
   "Class Component": {
     "prefix": "cc",
     "body": [
-      "class $1 extends Component {\n",
-      "\tstate = { $2 }\n", 
+      "class ${1:ComponentName} extends Component {\n",
+      "\tstate = { ${2:count: 0} }\n", 
       "\trender() {\n", 
       "\t\treturn ($0);\n",
       "\t}\n",
       "}\n", 
-      "export default $1;"
+      "export default ${1:ComponentName};"
     ],
     "description": "Class Component"
   },
@@ -58,16 +58,16 @@
   "Class Component With Constructor": {
     "prefix": "ccc",
     "body": [
-      "class $1 extends Component {\n",
+      "class ${1:ComponentName} extends Component {\n",
       "\tconstructor(props) {\n",
       "\t\tsuper(props);\n",
       "\t}\n",
-      "\tstate = { $2 }\n",
+      "\tstate = { ${2:count: 0} }\n",
       "\trender() {\n", 
       "\t\treturn ($0);\n",
       "\t}\n",
       "}\n", 
-      "export default $1;"
+      "export default ${1:ComponentName};"
     ],
     "description": "Class Component With Constructor"
   },
@@ -75,10 +75,10 @@
   "Functional Component": {
     "prefix": "fc",
     "body": [
-      "const $1 = ($2) => {\n",
+      "const ${1:ComponentName} = (${2:props}) => {\n",
       "\treturn ($0);\n",
       "}\n", 
-      "export default $1;"
+      "export default ${1:ComponentName};"
     ],
     "description": "Functional Component"
   },
@@ -86,7 +86,7 @@
   "Named Functional Component": {
     "prefix": "nfc",
     "body": [
-      "export const $1 = ($2) => {\n",
+      "export const ${1:ComponentName} = (${2:props}) => {\n",
       "\treturn ($0);\n",
       "}"
     ],
@@ -96,10 +96,10 @@
   "Function Syntax Component": {
     "prefix": "fsc",
     "body": [
-      "function $1($2) {\n",
+      "function ${1:ComponentName}(${2:props}) {\n",
       "\treturn ($0);\n",
       "}\n",
-      "export default $1;"
+      "export default ${1:ComponentName};"
     ],
     "description": "Function Syntax Component"
   },
@@ -114,7 +114,7 @@
     "prefix": "uef",
     "body": [
       "useEffect(() => {\n",
-      "\t$1\n",
+      "\t${1:// Effect code here}\n",
       "}, []);"
     ],
     "description": "useEffect Hook"
@@ -123,8 +123,8 @@
   "useCallback": {
     "prefix": "ucb",
     "body": [
-      "useCallback((val$1) => {\n",
-      "\t$2\n",
+      "useCallback((${1:value}) => {\n",
+      "\t${2:// Callback code here}\n",
       "}, []);"
     ],
     "description": "useCallback Hook"
@@ -150,25 +150,25 @@
 
   "setState": {
     "prefix": "ss",
-    "body": ["this.setState({ $1: $2 });"],
+    "body": ["this.setState({ ${1:property}: ${2:value} });"],
     "description": "setState"
   },
 
   "Functional setState": {
     "prefix": "ssf",
-    "body": ["this.setState(prevState => {\n", "\treturn { $1: prevState.$1 };\n", "});"],
+    "body": ["this.setState(prevState => {\n", "\treturn { ${1:property}: prevState.${1:property} };\n", "});"],
     "description": "Functional setState"
   },
 
   "Declare a new state variable using State Hook": {
     "prefix": "usf",
-    "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"],
+    "body": ["const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:initialValue});"],
     "description": "Declare a new state Variable using the State Hook. Hit Tab to apply CamelCase to function"
   },
 
   "Declare a new ref variable using Ref Hook": {
     "prefix": "usr",
-    "body": ["const ${1} = useRef($2);"],
+    "body": ["const ${1:refName} = useRef(${2:initialValue});"],
     "description": "Declare a new ref Variable using the Ref Hook."
   },
 
@@ -208,7 +208,7 @@
   "Class Property Function": {
     "prefix": "cpf",
     "body": [
-      "$1 = (${2:e${TM_SELECTED_TEXT}}) => {\n",
+      "${1:handleEvent} = (${2:e${TM_SELECTED_TEXT}}) => {\n",
       "\t $0\n",
       "};"
     ],
@@ -218,7 +218,7 @@
   "Function Syntax Component Inline": {
     "prefix": "efsc",
     "body": [
-      "export default function $1($2) {\n",
+      "export default function ${1:ComponentName}(${2:props}) {\n",
       "\treturn ($0);\n",
       "}"
     ],
